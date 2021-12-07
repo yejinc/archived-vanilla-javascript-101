@@ -39,6 +39,7 @@ async function pickupBeverages() {
 pickupBeverages().then(console.log);
 
 // 3. useful APIs ✨
+// Promise.all === when input Promise array, waits until all Promise values gathers
 function pickupAllBeverages() {
   return Promise.all([orderTea(), orderCoffee()]).then(beverages =>
     beverages.join(' + ')
@@ -46,6 +47,7 @@ function pickupAllBeverages() {
 }
 pickupAllBeverages().then(console.log);
 
+// Promise.race === the very first return value of Promise arrrays 
 function pickupOnlyOne() {
   return Promise.race([orderTea(), orderCoffee()]);
 }
